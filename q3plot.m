@@ -1,4 +1,4 @@
-function q3plot(x)
+function q23plot(x, channel)
 
 
 x.closed_loop = false;
@@ -31,7 +31,7 @@ else
 	set(gca,'FontSize',16)
 
 	xlabel(x.handles.ax.minf,'Voltage (mV)')
-	ylabel(x.handles.ax.minf,'m_{\infty} (KCa)')
+	ylabel(x.handles.ax.minf,['m_{\infty} (' channel ')'])
 	xlabel(x.handles.ax.Ca,'Time (s)')
 	ylabel(x.handles.ax.Ca,'[Ca^2^+]')
 	ylabel(x.handles.ax.V,'V_m (mV)')
