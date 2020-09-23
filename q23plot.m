@@ -11,7 +11,7 @@ Vspace = -80:50;
 
 % inject current for half a second
 I_ext = zeros(x.t_end/x.sim_dt,1);
-I_ext(1:(500/x.sim_dt)) = x.I_ext;
+I_ext(1:(500/x.sim_dt)) = x.I_ext(1);
 x.I_ext = I_ext;
 
 if isfield(x.handles,'fig') 
