@@ -67,7 +67,7 @@ end
 % update the KCa m_inf curve
 switch channel
 case 'KCa'
-	minf = KCa(Vspace,.05);
+	minf = KCa(Vspace,x.AB.Ca);
 case 'HCurrent'
 	minf = HCurrent(Vspace,.05,x.AB.HCurrent.Vhalf);
 end
