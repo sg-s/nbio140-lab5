@@ -1,9 +1,6 @@
-
-function q23plot(x, channel)
-
+function qHCa_plot(x, channel)
 
 x.closed_loop = false;
-
 
 KCa = @(V,Ca) (Ca/(Ca+3.0))./(1.0+exp((V+28.3)./-12.6));
 HCurrent = @(V,Ca, Vhalf) 1.0./(1.0+exp((V-Vhalf)./5.5));
@@ -34,7 +31,7 @@ else
 	x.handles.ax.minf1.YLim = [-.01 1];
 	x.handles.ax.minf1.XLim  = [-150 100];
 	x.handles.ax.minf2 = subplot(2,3,4); hold on;
-	x.handles.ax.minf2.YLim = [-.01 1];
+	x.handles.ax.minf2.YLim = [-.01 0.03];
 	x.handles.ax.minf2.XLim  = [-150 100];
 
 	x.handles.ax.V = subplot(3,3,2:3); hold on
