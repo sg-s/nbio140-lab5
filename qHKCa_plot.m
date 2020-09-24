@@ -30,13 +30,15 @@ else
 	set(gca,'FontSize',16)
 	x.handles.ax.minf1.YLim = [-.01 1];
 	x.handles.ax.minf1.XLim  = [-150 100];
-	x.handles.ax.minf2 = subplot(2,3,4); hold on;
+	x.handles.ax.minf2 = subplot(2,3,4); hold on
+	set(gca,'FontSize',16)
 	x.handles.ax.minf2.YLim = [-.01 0.03];
 	x.handles.ax.minf2.XLim  = [-150 100];
 
 	x.handles.ax.V = subplot(3,3,2:3); hold on
 	set(gca,'FontSize',16)
-	x.handles.ax.I = subplot(3,3,5:6); hold on;
+	x.handles.ax.I = subplot(3,3,5:6); hold on
+	set(gca,'FontSize',16)
 	x.handles.ax.Ca = subplot(3,3,8:9); hold on
 	set(gca,'FontSize',16)
 
