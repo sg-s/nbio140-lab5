@@ -24,3 +24,12 @@ x.manipulate_plot_func = {@(x) qHKCa_plot(x,'HCurrent')};
 % x.manipulate([{'AB.Ca'; 'I_ext';'AB.HCurrent.Vhalf'}; x.find('*gbar')])
 
 x.manipulate({'AB.Ca'; 'I_ext';'AB.HCurrent.gbar';'AB.HCurrent.Vhalf';'AB.KCa.gbar'})
+
+
+
+% fix I_ext bounds
+idx = cellfun(@(x) any(strfind(x,'I ext')),{x.handles.puppeteer_object.handles.controllabel.Text});
+x.handles.puppeteer_object.handles.lbcontrol(idx).Value = -2;
+event = struct('Value',-2);
+x.handles.puppeteer_object.resetSliderBounds(x.handles.puppeteer_object.handles.lbcontrol(idx),event)
+x.handles.ax.I.YLim = [-2.1 1.1];
