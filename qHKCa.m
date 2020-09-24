@@ -1,4 +1,3 @@
-
 close all
 clearvars
 
@@ -19,11 +18,9 @@ x.AB.HCurrent.gbar = .5;
 x.AB.CaT.gbar = 20;
 x.AB.CaS.gbar = 20;
 
-
-x.manipulate_plot_func = {@(x) q23plot(x,'HCurrent')};
-
+x.manipulate_plot_func = {@(x) qHKCa_plot(x,'HCurrent')};
 
 % use this to fine tune parameters
 % x.manipulate([{'AB.Ca'; 'I_ext';'AB.HCurrent.Vhalf'}; x.find('*gbar')])
 
-x.manipulate({'AB.Ca'; 'I_ext';'AB.HCurrent.gbar';'AB.HCurrent.Vhalf'})
+x.manipulate({'AB.Ca'; 'I_ext';'AB.HCurrent.gbar';'AB.HCurrent.Vhalf';'AB.KCa.gbar'})
