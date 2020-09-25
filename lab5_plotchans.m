@@ -1,4 +1,5 @@
 function lab5_plotchans
+	
 
 KCa = @(V,Ca) (Ca/(Ca+3.0))./(1.0+exp((V+28.3)./-12.6));
 HCurrent = @(V,Vhalf) 1.0./(1.0+exp((V-Vhalf)./5.5));
