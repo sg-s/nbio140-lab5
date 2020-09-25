@@ -23,7 +23,7 @@ x.manipulate_plot_func = {@(x) qHKCa_plot(x,'HCurrent')};
 % use this to fine tune parameters
 % x.manipulate([{'AB.Ca'; 'I_ext';'AB.HCurrent.Vhalf'}; x.find('*gbar')])
 
-x.manipulate({'AB.Ca'; 'I_ext';'AB.HCurrent.gbar';'AB.HCurrent.Vhalf';'AB.KCa.gbar'})
+x.manipulate({'I_ext';'AB.HCurrent.gbar';'AB.HCurrent.Vhalf';'AB.KCa.gbar'})
 
 
 
