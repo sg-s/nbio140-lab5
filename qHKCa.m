@@ -9,6 +9,11 @@ x.t_end = 5e3;
 x.AB.HCurrent.destroy()
 x.AB.add('generic/HCurrent');
 
+% download the binary
+x.download;
+
+
+
 
 % fine tune some parameters to get a rebound burster
 x.AB.Leak.gbar = .074;
@@ -24,6 +29,13 @@ x.manipulate_plot_func = {@(x) qHKCa_plot(x,'HCurrent')};
 % x.manipulate([{'AB.Ca'; 'I_ext';'AB.HCurrent.Vhalf'}; x.find('*gbar')])
 
 x.manipulate({'I_ext';'AB.HCurrent.gbar';'AB.HCurrent.Vhalf';'AB.KCa.gbar'})
+
+
+drawnow;
+
+
+% attach so that closing puppeteer closes the main window
+x.handles.puppeteer_object.attachFigure(x.handles.fig);
 
 
 
