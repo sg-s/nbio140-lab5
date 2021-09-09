@@ -10,7 +10,13 @@ x.AB.HCurrent.destroy()
 x.AB.add('generic/HCurrent');
 
 % download the binary
-x.download;
+try
+	x.download;
+catch
+	x.closed_loop = false;
+	V = x.integrate;
+	x.closed_loop = true;
+end
 
 
 

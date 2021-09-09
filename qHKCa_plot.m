@@ -21,7 +21,9 @@ else
 	x.handles.Ca0 = x.AB.Ca;
 
 	% make figure
-	x.handles.fig = figure('outerposition',[3 3 1200 600],'PaperUnits','points','PaperSize',[1200 600],'Color','w'); hold on
+	x.handles.fig = figure('outerposition',[3 3 1800 1201],'PaperUnits','points','PaperSize',[1800 1201],'Color','w'); hold on
+
+
 
 	x.handles.ax = [];
 	x.handles.plots = [];
@@ -36,6 +38,7 @@ else
 	x.handles.ax.minf2.XLim  = [-150 100];
 
 	x.handles.ax.V = subplot(3,3,2:3); hold on
+	x.handles.ax.V.YLim = [-100 50];
 	set(gca,'FontSize',16)
 	x.handles.ax.I = subplot(3,3,5:6); hold on
 	set(gca,'FontSize',16)
@@ -53,15 +56,18 @@ else
 
 	[V,Ca] = x.integrate;
 	time = (1:length(V))*x.dt*1e-3;
-	x.handles.plots.V = plot(x.handles.ax.V,time,V,'k');
-	x.handles.plots.I = plot(x.handles.ax.I,time,I_ext,'k');
-	x.handles.plots.Ca = plot(x.handles.ax.Ca,time,Ca(:,1),'k');
+	x.handles.plots.V = plot(x.handles.ax.V,time,V,'k','LineWidth',2);
+	x.handles.plots.I = plot(x.handles.ax.I,time,I_ext,'k','LineWidth',2);
+	x.handles.plots.Ca = plot(x.handles.ax.Ca,time,Ca(:,1),'k','LineWidth',2);
 
 	minf1 = HCurrent(Vspace,0.05,-75);
 	minf2 = KCa(Vspace,0.05);
 
-	x.handles.plots.minf1 = plot(x.handles.ax.minf1,Vspace,minf1,'k');
-	x.handles.plots.minf2 = plot(x.handles.ax.minf2,Vspace,minf2,'k');
+	x.handles.plots.minf1 = plot(x.handles.ax.minf1,Vspace,minf1,'k','LineWidth',2);
+	x.handles.plots.minf2 = plot(x.handles.ax.minf2,Vspace,minf2,'k','LineWidth',2);
+
+	x.handles.ax.minf2.Visible = 'off';
+	x.handles.plots.minf2.Color = 'w';
 end
 
 
